@@ -219,3 +219,4 @@ export interface ISerializedStats<TKey, TValue> {
 export interface IArrayOrderedSet<T> extends Array<T> {
 	$$$___iarrayorderedset___$$$: T;
 }
+
