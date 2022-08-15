@@ -64,7 +64,6 @@ export const enum Float64 {
 }
 
 export const enum EInteger {
-	// MAX_SAFE_INTEGER = 9007199254740991,
 	MAX_SAFE_INTEGER = 2 ** (Float64.MANTISSA_BITS + 1) - 1,
 	MAX_VALUE = MAX_SAFE_INTEGER,
 	MIN_VALUE = -MAX_SAFE_INTEGER,
@@ -73,7 +72,6 @@ export const enum EInteger {
 }
 
 export const enum EUInteger {
-	// MAX_SAFE_INTEGER = 9007199254740991,
 	MAX_VALUE = EInteger.MAX_SAFE_INTEGER,
 	MIN_VALUE = 0,
 	BIT_LENGTH = Float64.BIT_LENGTH,
@@ -81,50 +79,50 @@ export const enum EUInteger {
 }
 
 export const enum EUint8 {
-	BYTE_LENGTH = 1,
-	BIT_LENGTH = 8 * BYTE_LENGTH,
-	MAX_VALUE = 255,
+	BIT_LENGTH = 8,
+	BYTE_LENGTH = BIT_LENGTH / 8,
+	MAX_VALUE = 2 ** BIT_LENGTH - 1,
 	MIN_VALUE = 0,
 }
 
 export const enum EInt8 {
-	BYTE_LENGTH = EUint8.BYTE_LENGTH,
-	BIT_LENGTH = 8 * BYTE_LENGTH,
+	BIT_LENGTH = EUint8.BIT_LENGTH,
+	BYTE_LENGTH = BIT_LENGTH / 8,
 	MAX_VALUE = (EUint8.MAX_VALUE - 1) / 2,
 	MIN_VALUE = -MAX_VALUE - 1,
 }
 
 export const enum EUint16 {
-	BYTE_LENGTH = EUint8.BYTE_LENGTH * 2,
-	BIT_LENGTH = 8 * BYTE_LENGTH,
+	BIT_LENGTH = 16,
+	BYTE_LENGTH = BIT_LENGTH / 8,
 	MAX_VALUE = EUint8.MAX_VALUE ** 2 + EUint8.MAX_VALUE * 2,
 	MIN_VALUE = 0,
 }
 
 export const enum EInt16 {
-	BYTE_LENGTH = EUint16.BYTE_LENGTH,
-	BIT_LENGTH = 8 * BYTE_LENGTH,
+	BIT_LENGTH = EUint16.BIT_LENGTH,
+	BYTE_LENGTH = BIT_LENGTH / 8,
 	MAX_VALUE = (EUint16.MAX_VALUE - 1) / 2,
 	MIN_VALUE = -MAX_VALUE - 1,
 }
 
 export const enum EUint32 {
-	BYTE_LENGTH = EUint16.BYTE_LENGTH * 2,
-	BIT_LENGTH = 8 * BYTE_LENGTH,
+	BIT_LENGTH = 32,
+	BYTE_LENGTH = BIT_LENGTH / 8,
 	MAX_VALUE = EUint16.MAX_VALUE ** 2 + EUint16.MAX_VALUE * 2,
 	MIN_VALUE = 0,
 }
 
 export const enum EInt32 {
-	BYTE_LENGTH = EUint32.BYTE_LENGTH,
-	BIT_LENGTH = 8 * BYTE_LENGTH,
+	BIT_LENGTH = EUint32.BIT_LENGTH,
+	BYTE_LENGTH = BIT_LENGTH / 8,
 	MAX_VALUE = (EUint32.MAX_VALUE - 1) / 2,
 	MIN_VALUE = -MAX_VALUE - 1,
 }
 
 export const enum EUint64 {
-	BYTE_LENGTH = EUint32.BYTE_LENGTH * 2,
-	BIT_LENGTH = 8 * BYTE_LENGTH,
+	BIT_LENGTH = 64,
+	BYTE_LENGTH = BIT_LENGTH / 8,
 	MAX_VALUE = EUint32.MAX_VALUE ** 2 + EUint32.MAX_VALUE * 2,
 	MIN_VALUE = 0,
 }
